@@ -2,32 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.arrow {
+  width: 200;
+  height: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid black;
+  transform: rotate(-60deg);
+}
+.arrow::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: black;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.box {
+  position: relative;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  transform: translate(0px, 0);
+  z-index: -1; 
+  background: rgb(246,253,213);
+  background: linear-gradient(-90deg, rgba(246,253,213,1) 0%, rgba(231,192,152,1) 25%, rgba(213,151,228,1) 50%, rgba(31,227,221,1) 75%, rgba(63,249,131,1) 100%);
+  filter: blur(10px);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.manga{
+  position: absolute;
+  width: 98%;
+  height: 35px;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -20%);
+  padding-bottom: 0px;
+  background: rgb(246,253,213);
+  background: linear-gradient(90deg, rgba(246,253,213,0.75) 0%, rgba(231,192,152,0.75) 25%, rgba(213,151,228,0.75) 50%, rgba(31,227,221,0.75) 75%, rgba(63,249,131,0.75) 100%);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.text p:nth-child(1) {
+  text-decoration: underline;
+  text-decoration-thickness: 3px ;
+  text-underline-offset: 10px;
 }
+
+.catch {
+  position: relative;
+}
+.catch::before {
+  content: "";
+  position: absolute;
+  inset: 1px; 
+  transform: translate(0px, 0);
+  z-index: -1; 
+  background: rgb(246,253,213);
+  background: linear-gradient(-90deg, rgba(246,253,213,0.7) 0%, rgba(231,192,152,0.7) 25%, rgba(213,151,228,0.7) 50%, rgba(31,227,221,0.7) 75%, rgba(63,249,131,0.7) 100%);
+  filter: blur(20px);
+}      
