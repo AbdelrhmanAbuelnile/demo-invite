@@ -9,7 +9,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-20">
       <div className="w-[800px] bg-gradient-to-b from-[#AB96F8] to-[#FF99D0] p-2 rounded-md relative">
       <video className="w-full h-full" autoPlay loop muted>
-        <source src={require("../public/movie.mp4")} />
+        <source src='https://res.cloudinary.com/dmmbxksq2/video/upload/v1709688023/hzjjiucsdzhziemvfp7k.mp4' />
         Your browser does not support the video tag.
       </video>
       </div>
